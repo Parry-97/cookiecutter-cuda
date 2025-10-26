@@ -1,0 +1,6 @@
+{
+    "project_name": "my_cuda_project",
+    "description": "CUDA kernel implementation",
+    "chapter": "3",
+    "author": "pops"
+}
