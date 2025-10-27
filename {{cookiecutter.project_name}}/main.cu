@@ -4,7 +4,6 @@
  * @author {{cookiecutter.author}}
  * @chapter {{cookiecutter.chapter}}
  *
- * Part of the PMPP learning repository
  */
 
 #include <stdio.h>
