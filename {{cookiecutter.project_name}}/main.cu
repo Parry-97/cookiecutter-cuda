@@ -44,9 +44,10 @@ void {{cookiecutter.project_name}}(float *h_input, float *h_output, int n) {
     // Copy data to device
     cudaMemcpy(d_input, h_input, size, cudaMemcpyHostToDevice);
     
+    dim3 blockSize;
+    dim3 gridSize;
+
     // Launch kernel
-    int blockSize = 256;
-    int gridSize = (n + blockSize - 1) / blockSize;
     {{cookiecutter.project_name}}_kernel<<<gridSize, blockSize>>>(d_input, d_output, n);
     
     // Copy result back to host
