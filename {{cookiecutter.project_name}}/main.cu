@@ -8,6 +8,17 @@
 
 #include <stdio.h>
 
+
+#define CUDA_CHECK(call)                                                       \
+  do {                                                                         \
+    cudaError_t err = call;                                                    \
+    if (err != cudaSuccess) {                                                  \
+      printf("CUDA Error: %s at line %d\n", cudaGetErrorString(err),           \
+             __LINE__);                                                        \
+      exit(1);                                                                 \
+    }                                                                          \
+  } while (0)
+
 /**
  * @brief CUDA kernel for {{cookiecutter.project_name}}
  *
