@@ -6,6 +6,7 @@
  *
  */
 
+#include <iostream>
 #include <stdio.h>
 
 
@@ -35,6 +36,15 @@ __global__ void {{cookiecutter.project_name}}_kernel(float *input, float *output
         // TODO: Implement kernel logic
         output[i] = input[i];
     }
+}
+
+
+void print_array(float *v, int n, int limit = 5) {
+  for (int i = 0; i < n && i < limit; i++) {
+    std::cout << v[i] << " ";
+  }
+  if (n > limit)
+    std::cout << "... (and " << (n - limit) << " more)";
 }
 
 /**
